@@ -2,6 +2,15 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <times
+    time="2019/12/21 08:08:08"
+    timeType="dateTime"
+    >
+    <em>{d}天</em>
+    <em>{h}时</em>
+    <em>{m}分</em>
+    <em>{s}秒</em>
+    </times>
     <ul>
       <li>
         <a
@@ -79,6 +88,9 @@
           awesome-vue
         </a>
       </li>
+      <li>
+        <router-link to="/test">去测试页面</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -90,6 +102,9 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components:{
+    times:resolve=>require(['@/components/time/timedown'],resolve)
   }
 }
 </script>
